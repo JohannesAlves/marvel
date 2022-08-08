@@ -4,3 +4,8 @@
   padding: 0;
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

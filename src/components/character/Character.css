@@ -1,4 +1,37 @@
 
+.character-section {
+    max-width: 400px;
+    padding: 20px;
+    margin-left: 5%;
+    margin-top: 7vh;
+    color: black;
+    background-color: white;
+}
+
+.marvel-character {
+    color: #505050;
+}
+
+.hero-name {
+    margin-top: -1%;
+}
+
 h1 {
-    color: red;
+    font-size: 4em;
+    color: #8A2D5E;
+}
+
+.hero-description {
+    opacity: 63%;
+}
+
+.div-about {
+    text-align: center;
+}
+
+.hero-about {
+    text-align: center;
+    width: 80%;
+    height: 50px;
+    margin-top: 20%;
 }

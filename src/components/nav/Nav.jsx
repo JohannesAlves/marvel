@@ -18,7 +18,7 @@ function Nav (props) {
             <ul>
                 <li>Home</li>
                 <li>Avengers</li>
-                <li>Celestials</li>
+                <li>Characters</li>
                 <li>About</li>
             </ul>
         </nav>
