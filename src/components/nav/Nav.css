@@ -9,6 +9,10 @@ nav {
     background-color: rgb(255, 255, 255);
 }
 
+.menu-div {
+    display: none;
+}
+
 .marvel-logo {
     margin-top: 0.5rem;
     margin-left: 1rem;
@@ -25,4 +29,32 @@ li {
     padding-left: 35px;
     display: inline-block;
     list-style-type: none;
+}
+
+
+
+@media (max-width: 700px) {
+    
+    ul {
+        display: none;
+    }
+
+    .menu-div {
+        display:flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-right: 1%;
+    }
+
+    .menu-icon {
+        width: 40px;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .marvel-logo {
+        display: none;
+    }
+    
 }
