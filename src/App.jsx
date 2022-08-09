@@ -1,20 +1,19 @@
 import './App.css'
 import Nav from './components/home/nav/Nav'
-import Character from './components/home/character/Character'
-import CharacterImage from './components/home/character-image/characterImage'
-import BtnNextPage from './components/home/btn-next-page/BtnNextPage'
+import Home from './components/home/Home'
+import { Routes, Route } from 'react-router-dom'
+import Characters from './components/characters/Characters'
 
 function App() {
 
   return (
     <>
       <Nav />
-      
-      <main>
-      <Character />
-      <CharacterImage />
-      <BtnNextPage />
-      </main>
+
+      <Routes>
+        <Route path='/' element={ <Home /> }/>
+        <Route path='/characters' element= { <Characters /> } />
+      </Routes>
 
       </>
   )

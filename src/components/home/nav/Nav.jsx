@@ -2,6 +2,7 @@ import React from 'react'
 import './Nav.css'
 import MarvelLogo from '../../../assets/images/marvel-logo.svg'
 import Menu from '../../../assets/images/icon-menu.svg'
+import { Link } from 'react-router-dom'
 
 function Nav (props) {
     
@@ -16,9 +17,14 @@ function Nav (props) {
                 </div>
 
             <ul>
-                <li>Home</li>
+                <li>
+                    <Link to='/'>Home</Link>
+                </li>
+                <li>
+                    <Link to='/characters'>Characters</Link>
+                </li>
+                
                 <li>Avengers</li>
-                <li>Characters</li>
                 <li>About</li>
             </ul>
         </nav>
