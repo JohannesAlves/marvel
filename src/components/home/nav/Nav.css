@@ -29,9 +29,27 @@ li {
     padding-left: 35px;
     display: inline-block;
     list-style-type: none;
+    transition-property: transform;
+    transition: 0.25s ease;
+    
 }
 
+li::after {
+  content: '';
+  border-top: 4px solid rgb(255, 0, 0);
+  width: 100%;
+  display: block;
+  transform: rotateY(90deg);
+  transition:transform 0.25s linear;
+}
 
+li:hover {
+    transform: scale(1);
+}
+
+li:hover::after {
+    transform: rotate(0deg);
+}
 
 @media (max-width: 700px) {
     

@@ -18,10 +18,16 @@ function Nav (props) {
 
             <ul>
                 <li>
-                    <Link to='/'>Home</Link>
+                    <Link 
+                    to='/' 
+                    style={{textDecoration: 'none', color:'black'}}>Home
+                    </Link>
                 </li>
                 <li>
-                    <Link to='/characters'>Characters</Link>
+                    <Link 
+                    to='/characters'
+                    style={{textDecoration: 'none', color: 'black'}}>Characters
+                    </Link>
                 </li>
                 
                 <li>Avengers</li>
