@@ -1,5 +1,5 @@
 import React from 'react'
-import CharacterImg from '../../assets/images/iron-man.png'
+import CharacterImg from '../../../assets/images/iron-man.png'
 import './CharacterImage.css'
 
 function CharacterImage() {

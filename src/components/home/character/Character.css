@@ -1,6 +1,7 @@
 
 .character-section {
     max-width: 400px;
+    max-height: 500px;
     padding: 20px;
     margin-left: 5%;
     margin-top: 7vh;
@@ -35,3 +36,10 @@ h1 {
     height: 50px;
     margin-top: 20%;
 }
+
+@media (max-width: 398px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}
+

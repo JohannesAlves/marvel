@@ -56,5 +56,9 @@ li {
     .marvel-logo {
         width: 100%;
     }
+
+    .menu-icon {
+        width: 30px;
+    }
     
 }
