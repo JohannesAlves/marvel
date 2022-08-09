@@ -1,11 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
+.container-card {
+    display: flex;
+}
 
 .card {
-    position: absolute;
-    top: 60%;
-    left: 15%;
-    transform: translateX(-50%) translateY(-50%) translateZ(0);
     width: 370px;
     background-color: #242424;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
