@@ -1,11 +1,11 @@
 
-.character-img-div {
+.characterImgDiv {
     max-width: 300px;
     max-height: 800px;
     margin-top: 2%;
 }
 
-.character-img {
+.characterImg {
     width: 100%;
     height: 100%;
 }

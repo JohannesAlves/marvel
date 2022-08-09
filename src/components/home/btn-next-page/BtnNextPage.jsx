@@ -1,15 +1,12 @@
 import ArrowRight from '../../../assets/images/arrow-right.png'
+import style from './style.module.css'
 
 
 export default function BtnNextPage () {
 
     return (
         <div>
-            <img style={{
-                marginTop: '30vh',
-                color: 'white',
-                opacity: '80%'
-            }} src={ArrowRight}></img>
+            <img className={style.imgButton} src={ArrowRight} alt='arrow to right'></img>
         </div>
     )
 

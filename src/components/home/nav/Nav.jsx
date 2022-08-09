@@ -1,5 +1,5 @@
 import React from 'react'
-import './Nav.css'
+import style from './style.module.css'
 import MarvelLogo from '../../../assets/images/marvel-logo.svg'
 import Menu from '../../../assets/images/icon-menu.svg'
 import { Link } from 'react-router-dom'
@@ -7,31 +7,31 @@ import { Link } from 'react-router-dom'
 function Nav (props) {
     
     return (
-        <nav>
+        <nav className={style.nav}>
             <div>
-                <img src={MarvelLogo} className='marvel-logo'></img>
+                <img src={MarvelLogo} className={style.marvelLogo}></img>
             </div>
 
-                <div className='menu-div'>
-                <img src={Menu} className='menu-icon'></img>
+                <div className={style.menuDiv}>
+                <img src={Menu} className={style.menuIcon}></img>
                 </div>
 
-            <ul>
-                <li>
+            <ul className={style.ul}>
+                <li className={style.li}>
                     <Link 
                     to='/' 
                     style={{textDecoration: 'none', color:'black'}}>Home
                     </Link>
                 </li>
-                <li>
+                <li className={style.li}>
                     <Link 
                     to='/characters'
                     style={{textDecoration: 'none', color: 'black'}}>Characters
                     </Link>
                 </li>
                 
-                <li>Avengers</li>
-                <li>About</li>
+                <li className={style.li}>Avengers</li>
+                <li className={style.li}>About</li>
             </ul>
         </nav>
     )

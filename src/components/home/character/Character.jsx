@@ -1,23 +1,23 @@
-import './Character.css'
+import style from './style.module.css';
 
 function Character() {
 
     return (
-        <section className='character-section'>
+        <section className={style.characterSection}>
             <div>
-                <h4 className='marvel-character'>Marvel Character</h4>
-                <h1 className='hero-name'>IRON MAN</h1>
+                <h4 className={style.marvelCharacter}>Marvel Character</h4>
+                <h1 className={style.heroName}>IRON MAN</h1>
             </div>
 
             <div>
                 <h2 className='hero-real-name'>Tony Stark</h2>
-                <p className='hero-description'>Iron Man is a superhero appearing in American comic books published by Marvel Comics. 
+                <p className={style.heroDescription}>Iron Man is a superhero appearing in American comic books published by Marvel Comics. 
                     Each of Tony’s suits provides a full range of telecommunications, sophisticated artificial 
                     intelligence capable of piloting Tony to safety should he be rendered unconscious.</p>
             </div>
 
-            <div class='div-about'>
-                <button class='hero-about'>About</button>
+            <div className={style.divAbout}>
+                <button className={style.heroAbout}>About</button>
             </div>
         </section>
     )

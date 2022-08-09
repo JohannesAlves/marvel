@@ -1,12 +1,12 @@
 import React from 'react'
 import CharacterImg from '../../../assets/images/iron-man.png'
-import './CharacterImage.css'
+import style from './style.module.css'
 
 function CharacterImage() {
 
     return (
-        <div className='character-img-div'>
-            <img className='character-img' src={CharacterImg}></img>
+        <div className={style.characterImgDiv}>
+            <img className={style.characterImg} src={CharacterImg}></img>
         </div>
     )
 }

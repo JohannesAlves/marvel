@@ -1,0 +1,7 @@
+
+.imgButton {
+    width: 50px;
+    margin-top: 30vh;
+    opacity: 80%;
+    filter: invert(13%) sepia(80%) saturate(6554%) hue-rotate(359deg) brightness(109%) contrast(111%);
+}

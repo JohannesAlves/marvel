@@ -1,5 +1,5 @@
 
-.character-section {
+.characterSection {
     max-width: 400px;
     max-height: 500px;
     padding: 20px;
@@ -9,28 +9,25 @@
     background-color: white;
 }
 
-.marvel-character {
+.marvelCharacter {
     color: #505050;
 }
 
-.hero-name {
+.heroName {
+    font-size: 4em;
+    color: #8A2D5E;
     margin-top: -1%;
 }
 
-h1 {
-    font-size: 4em;
-    color: #8A2D5E;
-}
-
-.hero-description {
+.heroDescription {
     opacity: 63%;
 }
 
-.div-about {
+.divAbout {
     text-align: center;
 }
 
-.hero-about {
+.heroAbout {
     text-align: center;
     width: 80%;
     height: 50px;
@@ -38,7 +35,7 @@ h1 {
 }
 
 @media (max-width: 398px) {
-    h1 {
+    .heroName {
         font-size: 2.5em;
     }
 }
