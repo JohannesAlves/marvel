@@ -7,6 +7,7 @@
     margin-top: 7vh;
     color: black;
     background-color: white;
+    border-radius: 2%;
 }
 
 .marvelCharacter {
@@ -15,7 +16,7 @@
 
 .heroName {
     font-size: 4em;
-    color: #8A2D5E;
+    color: #a30000;
     margin-top: -1%;
 }
 

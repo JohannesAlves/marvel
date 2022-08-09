@@ -3,10 +3,12 @@
 .nav {
     font-family: 'Poppins', sans-serif;
     max-width: 100%;
+    margin-top: -0.4%;
     height: 8%;
     align-items: center;
     display: flex;
     background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 .marvelLogo {

@@ -6,7 +6,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #ffffff;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(172,0,0,1) 45%, rgba(0,0,0,1) 100%);
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,10 +19,13 @@
 
 
 
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
+    margin: 0;
+    padding: 0;
   }
   a:hover {
     color: #747bff;

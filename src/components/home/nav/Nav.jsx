@@ -29,8 +29,15 @@ function Nav (props) {
                     style={{textDecoration: 'none', color: 'black'}}>Characters
                     </Link>
                 </li>
+
+                <li className={style.li}>
+                    <Link 
+                    to='/avengers'
+                    style={{textDecoration: 'none', color: 'black'}}>Avengers
+                    </Link>
+                </li>
                 
-                <li className={style.li}>Avengers</li>
+                
                 <li className={style.li}>About</li>
             </ul>
         </nav>

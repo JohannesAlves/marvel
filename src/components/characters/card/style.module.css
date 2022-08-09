@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-.container-card {
+.containerCard {
     display: flex;
 }
 
@@ -22,14 +22,14 @@
 }
 
 
-.card__thumb {
+.cardThumb {
     height: 245px;
     overflow: hidden;
     background-color: #000;
     transition: height 0.5s;
 }
 
-.card__thumb img {
+.cardThumb img {
     width: 100%;
     display: block;
     opacity: 1;
@@ -39,11 +39,11 @@
     transition: opacity 0.5s, transform 0.5s,;
 }
 
-.card:hover .card__thumb {
+.card:hover .cardThumb {
     height: 130px;
 }
 
-.card:hover .card__thumb img {
+.card:hover .cardThumb img {
     opacity: 0.6;
     transform: scale(1.2);
 }
@@ -53,19 +53,19 @@
 * card_BODY
 **/
 
-.card__body {
+.cardBody {
     position: relative;
     height: 185px;
     padding: 20px;
     transition: height 0.5s;
 }
 
-.card:hover .card__body {
+.card:hover .cardBody {
     height: 300px;
 }
 
 
-.card__title {
+.cardTitle {
     margin: 0;
     padding: 0 0 10px 0;
     color: rgb(255, 255, 255);
@@ -74,7 +74,7 @@
     text-transform: uppercase;
 }
 
-.card__subtitle {
+.cardSubtitle {
     margin: 0;
     padding: 0 0 10px 0;
     font-size: 19px;
@@ -82,7 +82,7 @@
     opacity: 50%;
 }
 
-.card__description {
+.cardDescription {
     position: absolute;
     left: 20px;
     right: 20px;
@@ -99,7 +99,7 @@
     transition-delay: 0s;
 }
 
-.card:hover .card__description {
+.card:hover .cardDescription {
     opacity: 1;
     transform: translateY(0px);
     transition-delay: 0.2s;

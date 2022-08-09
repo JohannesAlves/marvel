@@ -1,19 +1,25 @@
-import './card.css'
+import style from './style.module.css'
 
 
 export default function Card (props) {
 
     return (
         <>
-    <div className='container-card'>
-        <article class="card">
-            <header class="card__thumb">
-                <a href="#"><img src={props.heroImage}/></a>
+    <div className={style.containerCard}>
+        <article className={style.card}>
+            <header className={style.cardThumb}>
+                <a href="#">
+                    <img src={props.heroImage}/>
+                </a>
             </header>
-            <div class="card__body">
-                <h2 class="card__title"><a href="#">{props.heroName}</a></h2>
-                <div class="card__subtitle"> {props.heroSubtitle} </div>
-                <p class="card__description">{props.heroDescription}</p>
+            <div className={style.cardBody}>
+                
+                <h2 className={style.cardTitle}>
+                    <a href="#">{props.heroName}</a>
+                </h2>
+
+                <div className={style.cardSubtitle}> {props.heroSubtitle} </div>
+                <p class={style.cardDescription}>{props.heroDescription}</p>
             </div>
         </article>
     </div>
