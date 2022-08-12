@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './style.module.css'
-import MarvelLogo from '../../../assets/images/marvel-logo.svg'
-import Menu from '../../../assets/images/icon-menu.svg'
+import MarvelLogo from '../../assets/images/marvel-logo.svg'
+import Menu from '../../assets/images/icon-menu.svg'
 import { Link } from 'react-router-dom'
 
 function Nav (props) {
