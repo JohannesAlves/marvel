@@ -33,7 +33,7 @@ function Nav (props) {
                 <li className={style.li}>
                     <Link 
                     to='/avengers'
-                    style={{textDecoration: 'none', color: 'black'}}>Avengers
+                    style={{textDecoration: 'none', color: 'black'}}>Comics
                     </Link>
                 </li>
                 

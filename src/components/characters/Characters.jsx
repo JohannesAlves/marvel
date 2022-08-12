@@ -1,15 +1,47 @@
 import Card from './card/Card'
 import style from './style.module.css'
+import { useEffect } from 'react';
+import md5 from 'md5'
+import { useState } from 'react';
+
 
 
 export default function Characters () {
+    const [total, setTotal] = useState(0);
+    const [characters, setCharacters] = useState([]);
+
+    useEffect(() => {
+        const apiKey = '4f81be65ec9847a1f604eb1c0a55d48b';
+        let timestamp = new Date().getTime();
+        let hash = md5(timestamp+privateKey+apiKey)
+
+
+        let url = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=100`
+
+        let settings = {
+            method: 'GET',
+        }
+
+        fetch(url, settings)
+        .then(response => response.json())
+        .then(characters => {
+            const {data} = characters
+            setTotal(data.total)
+            setCharacters(data.results)
+        })
+        .catch(err => err.json())
+    }, [])
+
+
 
     return (
         <div className='body-card'>
+            <h2>Total de heróis: {total}</h2>
             <article className={style.cardArticle}>
-            <Card heroImage="https://images-na.ssl-images-amazon.com/images/I/61JuZe9hWuL.jpg" heroName='Captain Marvel' heroSubtitle='Capitã Marvel, parte do exército de elite dos Kree, uma raça alienígena, encontra-se no meio de uma batalha entre seu povo e os Skrulls.'/>
-            <Card heroImage='https://upload.wikimedia.org/wikipedia/pt/thumb/0/03/Thanos_por_Jim_Starlin.png/260px-Thanos_por_Jim_Starlin.png' heroName='Thanos' heroSubtitle='A lua Titã era governada por Mentor ALars, quando então reinava paz e tecnologia. '/>
-            <Card heroImage='https://geeknfeminist.com.br/wp-content/uploads/2020/03/perfil-hq-tempestade-21.jpg' heroName='Tempestade' heroSubtitle='Ororo Munroe descende de uma antiqüíssima linha de sacerdotisas africanas dotadas de cabelos brancos desde a infância, olhos azuis e grande potencial para feitos,mágicos. A mãe de Ororo era princesa de uma tribo do Quênia que se casou com um jornalista americano.'/>
+                {characters.map(character => {
+                    console.log(character.thumbnail.path)
+                    return <Card heroName={character.name} heroSubtitle={character.description} heroImage={character.thumbnail.path+'.jpg'}/>
+                })}
             </article>
         </div>
     )
