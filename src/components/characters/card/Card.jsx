@@ -21,7 +21,7 @@ export default function Card (props) {
                 </h2>
 
                 <div className={style.cardSubtitle}> {props.heroSubtitle} </div>
-                <p class={style.cardDescription}>{props.heroDescription}</p>
+                <p className={style.cardDescription}>{props.heroDescription}</p>
             </div>
         </article>
     </div>
