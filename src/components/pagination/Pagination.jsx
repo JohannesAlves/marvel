@@ -12,8 +12,8 @@ function Pagination({charactersPerPage, totalCharacters, paginate}) {
         <div className={style.pagination}>
             <ul className={style.ul}>
                 {pageNumbers.map(number => (
-                    <li key={number} className={style.pagination}>
-                        <a onClick={() => paginate(number)} href='#'>
+                    <li key={number} className={style.li}>
+                        <a onClick={() => paginate(number)} href='#' className="a">
                             {number}
                         </a>
                     </li>

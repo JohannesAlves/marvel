@@ -1,8 +1,7 @@
 
-
-
 .ul {
-    white-space: nowrap;
+    width: 15px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    list-style: none;
 }

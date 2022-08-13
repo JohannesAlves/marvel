@@ -40,9 +40,7 @@ export default function Characters () {
         }
 
     useEffect( () => {
-    
         fetchData()
-
     }, [currentPage])
 
         
@@ -56,13 +54,15 @@ export default function Characters () {
             <ContentTotalHeros total={total}/>
         </div>
 
+        <div className={style.pagination}>
+                <Pagination charactersPerPage={charactersPerPage} totalCharacters={total} paginate={paginate}/>
+        </div>
+
         <article className={style.cardArticle}>
                 <ContentCharacters characters={characters}/>
         </article>
 
-        <div className={style.pagination}>
-                <Pagination charactersPerPage={charactersPerPage} totalCharacters={total} paginate={paginate}/>
-        </div>
+
     </>
     )
 }
