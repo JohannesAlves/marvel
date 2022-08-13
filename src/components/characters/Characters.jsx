@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
-import ContentCharacters from './contentCharacters/ContentCharacters';
-import ContentTotalHeros from './contentCharacters/ContentTotalHeros';
+import ContentCharacters from '../Content/contentCharacters/ContentCharacters';
+import ContentTotalHeros from '../Content/contentCharacters/ContentTotalHeros'
+import PaginationSelector from '../paginationSelector/PaginationSelector';
 import Pagination from '../pagination/Pagination'
+import TestPagination from '../pagination/TestPagination';
 
 import style from './style.module.css'
 import md5 from 'md5'
@@ -9,13 +11,10 @@ import md5 from 'md5'
 
 export default function Characters () {
     const [currentPage, setCurrentPage] = useState(1);
-    const [charactersPerPage] = useState(20);
+    const [charactersPerPage, setCharactersPerPage] = useState(10);
     const [characters, setCharacters] = useState([]);
     const [total, setTotal] = useState(0);
 
-
-
-        // get previous page
 
         const fetchData =  () => {
             const apiKey = '4f81be65ec9847a1f604eb1c0a55d48b';
@@ -24,7 +23,7 @@ export default function Characters () {
             let hash = md5(timestamp+privateKey+apiKey);
     
     
-            let url = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=20&offset=${(currentPage - 1) * 20 }`
+            let url = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=${charactersPerPage}&offset=${(currentPage - 1) * 20 }`
     
             fetch(url)
             .then(response => {
@@ -39,27 +38,35 @@ export default function Characters () {
     
         }
 
+    // useEffect to show data in another pages. !mounting and unmounting!
     useEffect( () => {
         fetchData()
     }, [currentPage])
 
+
+
         
             // change page
-            const paginate = pageNumber => setCurrentPage(pageNumber)
+        const paginate = pageNumber => setCurrentPage(pageNumber)
 
 
     return (
     <>
+
         <div className={style.heroCount}>
             <ContentTotalHeros total={total}/>
         </div>
 
+        <div>
+            <PaginationSelector charactersPerPage={charactersPerPage} setCharactersPerPage={setCharactersPerPage}/>
+        </div>
+
         <div className={style.pagination}>
-                <Pagination charactersPerPage={charactersPerPage} totalCharacters={total} paginate={paginate}/>
+            <Pagination charactersPerPage={charactersPerPage} totalCharacters={total} paginate={paginate} currentPage={currentPage}/>
         </div>
 
         <article className={style.cardArticle}>
-                <ContentCharacters characters={characters}/>
+            <ContentCharacters characters={characters}/>
         </article>
 
 

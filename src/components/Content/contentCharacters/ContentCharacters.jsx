@@ -1,4 +1,4 @@
-import Card from '../card/Card'
+import Card from '../../characters/card/Card'
 
     function ContentCharacters (props) {
         return (
