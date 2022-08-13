@@ -4,7 +4,11 @@ import Card from '../card/Card'
         return (
         <>
             {props.characters.map(character => {
-                    return <Card heroName={character.name} heroSubtitle={character.description} heroImage={character.thumbnail.path+'.jpg'}/>
+                    return (
+                    <div key={character.id}>
+                        <Card heroName={character.name} heroSubtitle={character.description} heroImage={character.thumbnail.path+'.jpg'}/>
+                    </div>
+                    )
                 })}
         </>
         )
