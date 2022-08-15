@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
 .cardArticle {
     display: flex;
     gap: 60px;
@@ -8,17 +8,31 @@
     margin: 20px auto;
 }
 
-.cardArticle, .heroCount {
-    font-family: 'Fira Sans', sans-serif;
+.cardArticle,
+.heroCount {
+    font-family: "Fira Sans", sans-serif;
 }
 
 .heroCount {
     display: flex;
     justify-content: center;
+    box-shadow: 25px 3px 9px 1px rgba(0, 0, 0, 0.56);
     font-size: 1.5em;
     color: rgb(255, 255, 255);
 }
 
+.paginationConfig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 3px 39px 1px rgba(0, 0, 0, 0.56);
+    background-color: rgb(255, 255, 255, 0.9);
+    border-radius: 35px;
+    width: 25rem;
+    height: 5vh;
+    margin: 2% auto;
+}
+
 .pagination {
-    background-color: white;
+    margin-right: 5%;
 }
