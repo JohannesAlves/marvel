@@ -2,23 +2,21 @@ import { useEffect, useState } from 'react';
 import ContentCharacters from '../Content/contentCharacters/ContentCharacters';
 import ContentTotalHeros from '../Content/contentCharacters/ContentTotalHeros';
 import Pagination from '../pagination/Pagination/Pagination';
-import SearchBar from '../SearchBar/SearchBar';
-import ListPage from '../ListPage/ListPage';
 
 import style from './style.module.css';
 import md5 from 'md5';
+import SearchBar from '../SearchBar/SearchBar';
 
 export default function Characters() {
     // page states
     const [currentPage, setCurrentPage] = useState(1);
-    const [charactersPerPage, setCharactersPerPage] = useState(30);
+    const [charactersPerPage] = useState(20);
 
     // Character states
     const [characters, setCharacters] = useState([]);
     const [total, setTotal] = useState(0);
 
-    // Search states
-    const [searchResults, setSearchResults] = useState([]);
+    const [search, setSearch] = useState('');
 
     // fetch data from api marvel
     const fetchData = () => {
@@ -29,7 +27,7 @@ export default function Characters() {
 
         let url = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=${charactersPerPage}&offset=${
             (currentPage - 1) * 20
-        }`;
+        }${search.length > 0 ? `&nameStartsWith=${search}` : ''}`;
 
         fetch(url)
             .then(response => {
@@ -38,7 +36,6 @@ export default function Characters() {
             .then(characters => {
                 const { data } = characters;
                 setCharacters(data.results);
-                setSearchResults(data.results);
                 setTotal(data.total);
             })
             .catch(err => err.json());
@@ -47,7 +44,7 @@ export default function Characters() {
     // useEffect to show data in another pages. !mounting and unmounting!
     useEffect(() => {
         fetchData();
-    }, [currentPage]);
+    }, [currentPage, search]);
 
     // change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
@@ -58,18 +55,11 @@ export default function Characters() {
                 <ContentTotalHeros total={total} />
             </div>
 
-            <div className={style.paginationConfig}>
-                <SearchBar
-                    items={characters}
-                    setSearchResults={setSearchResults}
-                />
-                {/* <div className={style.paginationSelector}>
-                    <PaginationSelector
-                        charactersPerPage={charactersPerPage}
-                        setCharactersPerPage={setCharactersPerPage}
-                    />
-                </div> */}
+            <div className={style.searchBarConfig}>
+                <SearchBar value={search} setSearch={setSearch} />
+            </div>
 
+            <div className={style.paginationConfig}>
                 <div className={style.pagination}>
                     <Pagination
                         itensPerPage={charactersPerPage}
@@ -81,7 +71,7 @@ export default function Characters() {
             </div>
 
             <article className={style.cardArticle}>
-                <ContentCharacters characters={searchResults} />
+                <ContentCharacters characters={characters} />
             </article>
         </>
     );

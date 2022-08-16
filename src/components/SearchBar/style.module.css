@@ -1,0 +1,13 @@
+.searchBar {
+    display: flex;
+    justify-content: center;
+    color: black;
+    box-shadow: 25px 3px 39px 1px rgba(0, 0, 0, 0.56);
+    background-color: rgb(255, 255, 255, 0.9);
+    border-radius: 35px;
+    width: 25rem;
+    height: 3rem;
+    margin: 2% auto;
+    border-style: none;
+    text-align: center;
+}
