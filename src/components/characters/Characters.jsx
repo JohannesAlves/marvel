@@ -55,11 +55,11 @@ export default function Characters() {
                 <ContentTotalHeros total={total} />
             </div>
 
-            <div className={style.searchBarConfig}>
-                <SearchBar value={search} setSearch={setSearch} />
-            </div>
-
             <div className={style.paginationConfig}>
+                <div className={style.searchBarConfig}>
+                    <SearchBar value={search} setSearch={setSearch} />
+                </div>
+
                 <div className={style.pagination}>
                     <Pagination
                         itensPerPage={charactersPerPage}

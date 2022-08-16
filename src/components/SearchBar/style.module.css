@@ -1,6 +1,6 @@
 .searchBar {
-    display: flex;
-    justify-content: center;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1rem;
     color: black;
     box-shadow: 25px 3px 39px 1px rgba(0, 0, 0, 0.56);
     background-color: rgb(255, 255, 255, 0.9);
