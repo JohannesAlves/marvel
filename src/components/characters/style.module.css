@@ -1,16 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+.paginationConfig,
+.pagination,
 .cardArticle {
     display: flex;
-    gap: 60px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    margin: 20px auto;
 }
 
-.cardArticle,
-.heroCount {
-    font-family: 'Fira Sans', sans-serif;
+.pageCharacters {
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.cardArticle {
+    gap: 60px;
+    flex-wrap: wrap;
+    margin: 20px auto;
 }
 
 .heroCount {
@@ -22,21 +27,37 @@
 }
 
 .paginationConfig {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 100px;
     flex-wrap: wrap;
     margin-top: 2%;
 }
 
 .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     box-shadow: 25px 3px 39px 1px rgba(0, 0, 0, 0.56);
     background-color: rgb(255, 255, 255, 0.9);
     border-radius: 35px;
     width: 25rem;
     height: 3rem;
+    border: 3px solid black;
+    transition: box-shadow 0.4s;
+}
+
+.pagination:hover {
+    box-shadow: 25px 0px 39px 0px rgba(122, 122, 122, 0.56);
+}
+
+@media (max-width: 960px) {
+    .heroCount {
+        font-size: 1em;
+        justify-content: center;
+        box-shadow: none;
+    }
+
+    .pagination {
+        box-shadow: none;
+    }
+
+    .paginationConfig {
+        gap: 15px;
+    }
 }

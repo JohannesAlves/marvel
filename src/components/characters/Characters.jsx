@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import ContentCharacters from '../Content/contentCharacters/ContentCharacters';
-import ContentTotalHeros from '../Content/contentCharacters/ContentTotalHeros';
+import ContentCharacters from '../Content/contentCharacters/Card/ContentCharacters';
+import ContentTotalHeros from '../Content/contentCharacters/TotalHeros/ContentTotalHeros';
 import Pagination from '../pagination/Pagination/Pagination';
 
 import style from './style.module.css';
@@ -50,7 +50,7 @@ export default function Characters() {
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
-        <>
+        <div className={style.pageCharacters}>
             <div className={style.heroCount}>
                 <ContentTotalHeros total={total} />
             </div>
@@ -73,6 +73,6 @@ export default function Characters() {
             <article className={style.cardArticle}>
                 <ContentCharacters characters={characters} />
             </article>
-        </>
+        </div>
     );
 }
