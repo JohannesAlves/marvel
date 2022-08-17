@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ContentCharacters from '../Content/contentCharacters/Card/ContentCharacters';
 import ContentTotalHeros from '../Content/contentCharacters/TotalHeros/ContentTotalHeros';
+import Loading from '../LoadingSpinner/Loading';
 import Pagination from '../pagination/Pagination/Pagination';
 
 import style from './style.module.css';
@@ -16,9 +17,11 @@ export default function Characters() {
     const [characters, setCharacters] = useState([]);
     const [total, setTotal] = useState(0);
 
+    // search states
     const [search, setSearch] = useState('');
 
-    // fetch data from api marvel
+    const [removeLoading, setRemoveLoading] = useState(false);
+
     const fetchData = () => {
         const apiKey = '4f81be65ec9847a1f604eb1c0a55d48b';
         const privateKey = import.meta.env.VITE_PRIVATE_KEY;
@@ -37,6 +40,7 @@ export default function Characters() {
                 const { data } = characters;
                 setCharacters(data.results);
                 setTotal(data.total);
+                setRemoveLoading(true);
             })
             .catch(err => err.json());
     };
@@ -48,6 +52,10 @@ export default function Characters() {
 
     // change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
+
+    if (!removeLoading) {
+        return <Loading />;
+    }
 
     return (
         <div className={style.pageCharacters}>
@@ -66,6 +74,7 @@ export default function Characters() {
                         totalItens={total}
                         paginate={paginate}
                         currentPage={currentPage}
+                        search={search}
                     />
                 </div>
             </div>

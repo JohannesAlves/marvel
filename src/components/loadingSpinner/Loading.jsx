@@ -1,8 +1,12 @@
+import loading from '../../assets/images/loading.svg';
+import style from './style.module.css';
 
-function Loading () {
+function Loading() {
     return (
-        <h1>Carregando...</h1>
-    )
+        <div className={style.loading_container}>
+            <img className={style.loading_img} src={loading}></img>
+        </div>
+    );
 }
 
 export default Loading;

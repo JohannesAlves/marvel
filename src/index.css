@@ -21,16 +21,16 @@ body {
         90deg,
         rgba(0, 0, 0, 1) 0%,
         rgba(172, 0, 0, 1) 45%,
-        rgba(0, 0, 0, 1) 100%
+        rgba(0, 0, 0, 1) 150%
     );
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 600px) {
     body {
-        background: rgb(185, 0, 0);
+        background: rgb(172, 0, 0);
     }
 }
 

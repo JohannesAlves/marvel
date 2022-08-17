@@ -1,7 +1,13 @@
-import PaginationItem from "../PaginationItem/PaginationItem";
-import style from "./style.module.css";
+import PaginationItem from '../PaginationItem/PaginationItem';
+import style from './style.module.css';
 
-function Pagination({ itensPerPage, totalItens, paginate, currentPage }) {
+function Pagination({
+    itensPerPage,
+    totalItens,
+    paginate,
+    currentPage,
+    search,
+}) {
     const lastPage = Math.floor(totalItens / itensPerPage);
     const prevPages =
         currentPage > 1
@@ -14,6 +20,8 @@ function Pagination({ itensPerPage, totalItens, paginate, currentPage }) {
         lastPage - 3 < currentPage
             ? []
             : [...new Array(4)].map((_, index) => currentPage + index + 1);
+
+    // se o tamanho do search for maior do que 0 ele terá que zerar o estado atual do currentPage para 1 novamente
 
     return (
         <div className={style.pagination}>
