@@ -3,7 +3,7 @@ import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
 import { Routes, Route } from 'react-router-dom';
 import Characters from './components/Characters/Characters';
-import Avengers from './components/Avengers/Avengers';
+import Comics from './components/Comics/Comics';
 
 function App() {
     return (
@@ -13,7 +13,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/characters" element={<Characters />} />
-                <Route path="/avengers" element={<Avengers />} />
+                <Route path="/comics" element={<Comics />} />
             </Routes>
         </>
     );

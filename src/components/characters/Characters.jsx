@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import ContentCharacters from '../Content/contentCharacters/Card/ContentCharacters';
-import ContentTotalHeros from '../Content/contentCharacters/TotalHeros/ContentTotalHeros';
+import ContentTotalCharacters from '../Content/contentCharacters/TotalHeros/ContentTotalHeros';
 import Loading from '../LoadingSpinner/Loading';
-import Pagination from '../pagination/Pagination/Pagination';
+import Pagination from '../Pagination/Pagination/Pagination';
 
 import style from './style.module.css';
 import md5 from 'md5';
@@ -12,14 +12,12 @@ export default function Characters() {
     // page states
     const [currentPage, setCurrentPage] = useState(1);
     const [charactersPerPage] = useState(20);
-
     // Character states
     const [characters, setCharacters] = useState([]);
     const [total, setTotal] = useState(0);
-
     // search states
     const [search, setSearch] = useState('');
-
+    // loading states
     const [removeLoading, setRemoveLoading] = useState(false);
 
     const fetchData = () => {
@@ -60,7 +58,7 @@ export default function Characters() {
     return (
         <div className={style.pageCharacters}>
             <div className={style.heroCount}>
-                <ContentTotalHeros total={total} />
+                <ContentTotalCharacters total={total} />
             </div>
 
             <div className={style.paginationConfig}>
