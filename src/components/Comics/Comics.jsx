@@ -2,6 +2,7 @@ import React from 'react';
 import style from './style.module.css';
 import marvelComicsLogo from '../../assets/images/marvelcomics.png';
 import comic from '../../assets/images/comic.jpg';
+import Modal from '../Modal/Modal';
 
 export default function Avengers() {
     return (
@@ -17,9 +18,7 @@ export default function Avengers() {
                     </div>
                     <div className={style.details}>
                         <h3 className={style.h3}>Ultimate X-Men</h3>
-                        <button className={style.btn_information}>
-                            More Information
-                        </button>
+                        <Modal />
                     </div>
                 </div>
             </div>
