@@ -5,12 +5,20 @@ export default function ContentComicsCard(props) {
     return (
         <>
             {props.cards.map(card => {
+                let description =
+                    card.description <= 0
+                        ? 'Description comic not found!'
+                        : card.description;
+
+                let countPage =
+                    card.pageCount <= 0 ? 'Not found!' : card.pageCount;
+
                 return (
                     <ComicsCard
                         title={card.title}
                         image={card.thumbnail.path + '.jpg'}
-                        description={card.description}
-                        pageCount={card.pageCount}
+                        description={description}
+                        pageCount={countPage}
                         key={card.id}
                     />
                 );

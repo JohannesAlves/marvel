@@ -4,9 +4,11 @@ import ComicsCard from './ComicsCard/ComicsCard';
 import ContentComicsCard from '../Content/ContentComicsCard/ContentComicsCard';
 import { useState, useEffect } from 'react';
 import md5 from 'md5';
+import Loading from '../LoadingSpinner/Loading';
 
 export default function Avengers() {
     const [cards, setCards] = useState([]);
+    const [removeLoading, setRemoveLoading] = useState(false);
 
     const fetchData = () => {
         const apiKey = '4f81be65ec9847a1f604eb1c0a55d48b';
@@ -21,12 +23,17 @@ export default function Avengers() {
             .then(comics => {
                 const { data } = comics;
                 setCards(data.results);
+                setRemoveLoading(true);
             });
     };
 
     useEffect(() => {
         fetchData();
     }, []);
+
+    if (!removeLoading) {
+        return <Loading />;
+    }
 
     return (
         <div className={style.card_comics}>

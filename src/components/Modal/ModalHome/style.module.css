@@ -8,6 +8,7 @@
 }
 
 .description_comic_div {
+    width: 400px;
     height: 400px;
     overflow-y: auto;
     margin-top: 5%;
