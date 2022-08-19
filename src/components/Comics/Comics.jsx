@@ -14,7 +14,7 @@ export default function Avengers() {
         let timestamp = new Date().getTime();
         let hash = md5(timestamp + privateKey + apiKey);
 
-        let url = `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=20`;
+        let url = `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=100`;
 
         fetch(url)
             .then(response => response.json())

@@ -9,6 +9,8 @@ export default function ContentComicsCard(props) {
                     <ComicsCard
                         title={card.title}
                         image={card.thumbnail.path + '.jpg'}
+                        description={card.description}
+                        pageCount={card.pageCount}
                         key={card.id}
                     />
                 );

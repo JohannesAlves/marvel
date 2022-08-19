@@ -2,7 +2,7 @@ import style from './style.module.css';
 import Modal from '../../Modal/Modal';
 import React from 'react';
 
-export default function ComicsCard({ image, title }) {
+export default function ComicsCard({ image, title, description, pageCount }) {
     return (
         <>
             <div className={style.cards} key={title}>
@@ -18,7 +18,12 @@ export default function ComicsCard({ image, title }) {
                         <div className={style.title_div}>
                             <h3 className={style.h3}>{title}</h3>
                         </div>
-                        <Modal />
+                        <Modal
+                            image={image}
+                            title={title}
+                            description={description}
+                            pageCount={pageCount}
+                        />
                     </div>
                 </div>
             </div>

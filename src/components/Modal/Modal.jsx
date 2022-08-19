@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import style from './style.module.css';
-import comic from '../../assets/images/comic.jpg';
 import ModalHome from './ModalHome/ModalHome';
 import ModalCreators from './ModalCreators/ModalCreators';
 import md5 from 'md5';
 
-function Modal() {
+function Modal({ image, title, description, pageCount }) {
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => {
@@ -31,7 +30,7 @@ function Modal() {
                     <div onClick={toggleModal} className={style.overlay}></div>
                     <div className={style.modal_content}>
                         <div className={style.comic_img_div}>
-                            <img className={style.comic_img} src={comic} />
+                            <img className={style.comic_img} src={image} />
                         </div>
 
                         <div className={style.navModal}>
@@ -44,8 +43,11 @@ function Modal() {
                         </div>
 
                         <div className={style.comic_information}>
-                            <ModalHome />
-                            {/* <ModalCreators /> */}
+                            <ModalHome
+                                title={title}
+                                description={description}
+                                pageCount={pageCount}
+                            />
                             <button
                                 className={style.close_modal}
                                 onClick={toggleModal}

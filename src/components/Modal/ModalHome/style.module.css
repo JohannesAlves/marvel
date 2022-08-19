@@ -1,12 +1,15 @@
 .title_comic_div {
     background-color: white;
-    width: 300px;
+    width: 110%;
+    height: 30%;
     border: 3px solid black;
     text-align: center;
     border-radius: 50%;
 }
 
 .description_comic_div {
+    height: 400px;
+    overflow-y: auto;
     margin-top: 5%;
     border-radius: 10%;
     border: 3px solid black;
