@@ -1,27 +1,36 @@
 import React from 'react';
 import style from './style.module.css';
-import marvelComicsLogo from '../../assets/images/marvelcomics.png';
-import comic from '../../assets/images/comic.jpg';
-import Modal from '../Modal/Modal';
+import ComicsCard from './ComicsCard/ComicsCard';
+import ContentComicsCard from '../Content/ContentComicsCard/ContentComicsCard';
+import { useState, useEffect } from 'react';
+import md5 from 'md5';
 
 export default function Avengers() {
+    const [cards, setCards] = useState([]);
+
+    const fetchData = () => {
+        const apiKey = '4f81be65ec9847a1f604eb1c0a55d48b';
+        const privateKey = import.meta.env.VITE_PRIVATE_KEY;
+        let timestamp = new Date().getTime();
+        let hash = md5(timestamp + privateKey + apiKey);
+
+        let url = `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=20`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(comics => {
+                const { data } = comics;
+                setCards(data.results);
+            });
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
-        <>
-            <div className={style.cards}>
-                <div className={`${style.card} ${style.card1}`}>
-                    <div className={style.container}>
-                        <img
-                            className={style.img_comic}
-                            src={comic}
-                            alt="las vegas"
-                        />
-                    </div>
-                    <div className={style.details}>
-                        <h3 className={style.h3}>Ultimate X-Men</h3>
-                        <Modal />
-                    </div>
-                </div>
-            </div>
-        </>
+        <div className={style.card_comics}>
+            <ContentComicsCard cards={cards} />
+        </div>
     );
 }

@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from './style.module.css';
 import comic from '../../assets/images/comic.jpg';
+import ModalHome from './ModalHome/ModalHome';
+import ModalCreators from './ModalCreators/ModalCreators';
+import md5 from 'md5';
 
 function Modal() {
     const [modal, setModal] = useState(false);
@@ -17,33 +20,32 @@ function Modal() {
 
     return (
         <div className={style.container}>
-            <button onClick={toggleModal} className={style.btn_modal}>
-                More Information
-            </button>
+            <div className={style.container_btn}>
+                <button onClick={toggleModal} className={style.btn_modal}>
+                    More Information
+                </button>
+            </div>
 
             {modal && (
                 <div className={style.modal}>
                     <div onClick={toggleModal} className={style.overlay}></div>
                     <div className={style.modal_content}>
-                        <img className={style.comic_img} src={comic} />
+                        <div className={style.comic_img_div}>
+                            <img className={style.comic_img} src={comic} />
+                        </div>
+
+                        <div className={style.navModal}>
+                            <ul className={style.ul}>
+                                <li className={style.li}>Home</li>
+                                <li className={style.li}>Creators</li>
+                                <li className={style.li}>Characters</li>
+                                <li className={style.li}>Collections</li>
+                            </ul>
+                        </div>
 
                         <div className={style.comic_information}>
-                            <div className={style.title_comic}>
-                                <h2>Title Comic:</h2>
-                                <p>Ultimate X-Men</p>
-                            </div>
-
-                            <h2>Description Comic:</h2>
-                            <div className={style.description_comic}>
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Culpa ratione quos ipsa
-                                    rep ellendus dignissimos reprehenderit ex
-                                    harum voluptates eaque quas. Consequatur
-                                    aspernatur earum quis! E ius quibusdam
-                                    quaerat iusto soluta in.
-                                </p>
-                            </div>
+                            <ModalHome />
+                            {/* <ModalCreators /> */}
                             <button
                                 className={style.close_modal}
                                 onClick={toggleModal}
