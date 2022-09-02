@@ -1,24 +1,7 @@
-.card_comics,
-.header {
+.card_comics {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
     align-items: center;
-}
-
-.header {
-    width: 100%;
-    height: 120px;
-    background-color: rgb(25, 25, 25);
-}
-
-.btn_information {
-    font-family: 'Comic Sans MS';
-    border-style: none;
-    background-color: rgb(172, 0, 0);
-    font-size: 1em;
-    color: rgb(243, 243, 243);
-    width: 150px;
-    height: 50px;
 }

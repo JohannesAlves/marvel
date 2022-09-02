@@ -1,10 +1,10 @@
 import React from 'react';
-import style from './style.module.css';
-import ComicsCard from './ComicsCard/ComicsCard';
-import ContentComicsCard from '../Content/ContentComicsCard/ContentComicsCard';
 import { useState, useEffect } from 'react';
+import style from './style.module.css';
+import ContentComicsCard from '../Content/ContentComicsCard/ContentComicsCard';
 import md5 from 'md5';
 import Loading from '../LoadingSpinner/Loading';
+import SearchBar from '../SearchBar/SearchBar';
 
 export default function Avengers() {
     const [cards, setCards] = useState([]);
@@ -16,7 +16,7 @@ export default function Avengers() {
         let timestamp = new Date().getTime();
         let hash = md5(timestamp + privateKey + apiKey);
 
-        let url = `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=100`;
+        let url = `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=20`;
 
         fetch(url)
             .then(response => response.json())
@@ -36,8 +36,10 @@ export default function Avengers() {
     }
 
     return (
-        <div className={style.card_comics}>
-            <ContentComicsCard cards={cards} />
-        </div>
+        <>
+            <div className={style.card_comics}>
+                <ContentComicsCard cards={cards} />
+            </div>
+        </>
     );
 }

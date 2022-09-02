@@ -1,3 +1,4 @@
+import notFound from '../../../../assets/images/notFound.jpg';
 import Card from '../../../Characters/card/Card';
 
 function ContentCharacters(props) {
@@ -9,12 +10,18 @@ function ContentCharacters(props) {
                         ? 'Character description not found!'
                         : character.description;
 
+                let image =
+                    character.thumbnail.path ===
+                    'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'
+                        ? notFound
+                        : character.thumbnail.path + '.jpg';
+
                 return (
                     <div key={character.id}>
                         <Card
                             heroName={character.name}
                             heroSubtitle={description}
-                            heroImage={character.thumbnail.path + '.jpg'}
+                            heroImage={image}
                         />
                     </div>
                 );
