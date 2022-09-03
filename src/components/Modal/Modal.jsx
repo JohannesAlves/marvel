@@ -4,7 +4,7 @@ import ModalHome from './ModalHome/ModalHome';
 import ModalCreators from './ModalCreators/ModalCreators';
 import md5 from 'md5';
 
-function Modal({ image, title, description, pageCount }) {
+function Modal({ image, title, description, pageCount, name, role }) {
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => {
@@ -43,11 +43,12 @@ function Modal({ image, title, description, pageCount }) {
                         </div>
 
                         <div className={style.comic_information}>
-                            <ModalHome
+                            <ModalCreators name={name} role={role} />
+                            {/* <ModalHome
                                 title={title}
                                 description={description}
                                 pageCount={pageCount}
-                            />
+                            /> */}
                             <button
                                 className={style.close_modal}
                                 onClick={toggleModal}

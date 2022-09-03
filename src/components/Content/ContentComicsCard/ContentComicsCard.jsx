@@ -1,5 +1,6 @@
 import ComicsCard from '../../Comics/ComicsCard/ComicsCard';
 import notFound from '../../../assets/images/notfound.jpg';
+import { useState } from 'react';
 
 export default function ContentComicsCard(props) {
     return (
@@ -19,8 +20,28 @@ export default function ContentComicsCard(props) {
                         ? notFound
                         : card.thumbnail.path + '.jpg';
 
+                const creatorsObj = card.creators.items.map(objCreator => {
+                    const creators = objCreator;
+
+                    return creators;
+                });
+
+                const creatorsName = [];
+                const creatorsRole = [];
+
+                for (let creator of creatorsObj) {
+                    const creatorName = creator.name;
+                    const creatorRole = creator.role;
+
+                    creatorsName.push(creatorName);
+                    creatorsRole.push(creatorRole);
+                }
+
+                console.log(creatorsName);
+
                 return (
                     <ComicsCard
+                        name={creatorsName}
                         title={card.title}
                         image={image}
                         description={description}
@@ -28,6 +49,10 @@ export default function ContentComicsCard(props) {
                         key={card.id}
                     />
                 );
+
+                /*
+                1. preciso passar como name e role o name de cada objeto e o seu respectivo role
+                */
             })}
         </>
     );
