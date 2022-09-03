@@ -44,8 +44,8 @@ function Modal({ image, title, description, pageCount, name, role }) {
                         </div>
 
                         <div className={style.comic_information}>
-                            <ModalCharacters />
-                            {/* <ModalCreators name={name} role={role} /> */}
+                            {/* <ModalCharacters /> */}
+                            <ModalCreators name={name} role={role} />
                             {/* <ModalHome
                                 title={title}
                                 description={description}

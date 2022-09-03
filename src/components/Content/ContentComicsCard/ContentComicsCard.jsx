@@ -30,11 +30,10 @@ export default function ContentComicsCard(props) {
                 const creatorsRole = [];
 
                 for (let creator of creatorsObj) {
-                    const creatorName = creator.name;
-                    const creatorRole = creator.role;
+                    const { name, role } = creator;
 
-                    creatorsName.push(creatorName);
-                    creatorsRole.push(creatorRole);
+                    creatorsName.push(name);
+                    creatorsRole.push(role);
                 }
 
                 return (
