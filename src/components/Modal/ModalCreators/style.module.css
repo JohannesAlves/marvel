@@ -1,1 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
 
+.ul {
+    list-style: decimal;
+}
+
+.roles {
+    list-style: none;
+}

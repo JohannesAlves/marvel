@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import style from './style.module.css';
 import ModalHome from './ModalHome/ModalHome';
 import ModalCreators from './ModalCreators/ModalCreators';
+import ModalCharacters from './ModalCharacters/ModalCharacters';
 import md5 from 'md5';
 
 function Modal({ image, title, description, pageCount, name, role }) {
@@ -43,7 +44,8 @@ function Modal({ image, title, description, pageCount, name, role }) {
                         </div>
 
                         <div className={style.comic_information}>
-                            <ModalCreators name={name} role={role} />
+                            <ModalCharacters />
+                            {/* <ModalCreators name={name} role={role} /> */}
                             {/* <ModalHome
                                 title={title}
                                 description={description}

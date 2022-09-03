@@ -37,10 +37,9 @@ export default function ContentComicsCard(props) {
                     creatorsRole.push(creatorRole);
                 }
 
-                console.log(creatorsName);
-
                 return (
                     <ComicsCard
+                        role={creatorsRole}
                         name={creatorsName}
                         title={card.title}
                         image={image}
