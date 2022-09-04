@@ -5,7 +5,15 @@ import ModalCreators from './ModalCreators/ModalCreators';
 import ModalCharacters from './ModalCharacters/ModalCharacters';
 import md5 from 'md5';
 
-function Modal({ image, title, description, pageCount, name, role }) {
+function Modal({
+    image,
+    title,
+    description,
+    pageCount,
+    name,
+    role,
+    titleCharacter,
+}) {
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => {
@@ -33,7 +41,6 @@ function Modal({ image, title, description, pageCount, name, role }) {
                         <div className={style.comic_img_div}>
                             <img className={style.comic_img} src={image} />
                         </div>
-
                         <div className={style.navModal}>
                             <ul className={style.ul}>
                                 <li className={style.li}>Home</li>
@@ -42,10 +49,9 @@ function Modal({ image, title, description, pageCount, name, role }) {
                                 <li className={style.li}>Collections</li>
                             </ul>
                         </div>
-
                         <div className={style.comic_information}>
-                            {/* <ModalCharacters /> */}
-                            <ModalCreators name={name} role={role} />
+                            <ModalCharacters titleCharacter={titleCharacter} />
+                            {/* <ModalCreators name={name} role={role} /> */}
                             {/* <ModalHome
                                 title={title}
                                 description={description}

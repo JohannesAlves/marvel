@@ -9,6 +9,7 @@ export default function ComicsCard({
     pageCount,
     name,
     role,
+    titleCharacter,
 }) {
     return (
         <>
@@ -26,6 +27,7 @@ export default function ComicsCard({
                             <h3 className={style.h3}>{title}</h3>
                         </div>
                         <Modal
+                            titleCharacter={titleCharacter}
                             name={name}
                             role={role}
                             image={image}

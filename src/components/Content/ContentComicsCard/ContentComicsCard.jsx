@@ -1,7 +1,9 @@
 import ComicsCard from '../../Comics/ComicsCard/ComicsCard';
 import notFound from '../../../assets/images/notfound.jpg';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
+// This component recive de data from api.
 export default function ContentComicsCard(props) {
     return (
         <>
@@ -36,8 +38,16 @@ export default function ContentComicsCard(props) {
                     creatorsRole.push(role);
                 }
 
+                const charactersURI = card.characters.items;
+
+                const characterName = [];
+                for (let character of charactersURI) {
+                    characterName.push(character.name);
+                }
+
                 return (
                     <ComicsCard
+                        titleCharacter={characterName}
                         role={creatorsRole}
                         name={creatorsName}
                         title={card.title}

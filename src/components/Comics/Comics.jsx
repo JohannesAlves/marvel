@@ -35,6 +35,8 @@ export default function Avengers() {
         return <Loading />;
     }
 
+    // This component render API to all components receive.
+
     return (
         <>
             <div className={style.card_comics}>
