@@ -40,14 +40,14 @@ export default function ContentComicsCard(props) {
 
                 const charactersURI = card.characters.items;
 
-                const characterName = [];
+                const characterData = [];
                 for (let character of charactersURI) {
-                    characterName.push(character.name);
+                    characterData.push(character);
                 }
 
                 return (
                     <ComicsCard
-                        titleCharacter={characterName}
+                        titleCharacter={characterData}
                         role={creatorsRole}
                         name={creatorsName}
                         title={card.title}
