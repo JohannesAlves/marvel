@@ -3,12 +3,7 @@ export default function ModalCharacters({ titleCharacter }) {
         return <li key={title.name}>{title.name}</li>;
     });
 
-    const validateNameCharacter =
-        nameCharacter.length <= 0 ? (
-            <p>Characters not found!</p>
-        ) : (
-            nameCharacter
-        );
+    const validateNameCharacter = nameCharacter.length <= 0 ? <p>Characters not found!</p> : nameCharacter;
 
     return (
         <>

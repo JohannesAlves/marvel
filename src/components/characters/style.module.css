@@ -9,6 +9,13 @@
 }
 
 .pageCharacters {
+    background-color: #a50000;
+    /* background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(172, 0, 0, 1) 45%,
+        rgba(0, 0, 0, 1) 150%
+    ); */
     font-family: 'Comic Sans MS', 'Comic Neue', cursive;
 }
 

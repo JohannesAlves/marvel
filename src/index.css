@@ -17,13 +17,6 @@
 }
 
 body {
-    background-color: #a50000;
-    /* background: linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(172, 0, 0, 1) 45%,
-        rgba(0, 0, 0, 1) 150%
-    ); */
     box-sizing: border-box;
     margin: 0;
     padding: 0;

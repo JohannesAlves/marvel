@@ -3,18 +3,11 @@ import style from './style.module.css';
 import ModalHome from './ModalHome/ModalHome';
 import ModalCreators from './ModalCreators/ModalCreators';
 import ModalCharacters from './ModalCharacters/ModalCharacters';
-import md5 from 'md5';
 
-function Modal({
-    image,
-    title,
-    description,
-    pageCount,
-    name,
-    role,
-    titleCharacter,
-}) {
+function Modal({ image, title, description, pageCount, name, role, titleCharacter }) {
     const [modal, setModal] = useState(false);
+
+    const [activeTab, setActiveTab] = useState('home');
 
     const toggleModal = () => {
         setModal(!modal);
@@ -24,6 +17,22 @@ function Modal({
         document.body.classList.add('active_modal');
     } else {
         document.body.classList.remove('active_modal');
+    }
+
+    const handleActiveTab = type => {
+        setActiveTab(type);
+    };
+
+    function ActiveTab() {
+        if (activeTab === 'home') {
+            return <ModalHome title={title} description={description} pageCount={pageCount} />;
+        }
+        if (activeTab === 'creators') {
+            return <ModalCreators name={name} role={role} />;
+        }
+        if (activeTab === 'characters') {
+            return <ModalCharacters titleCharacter={titleCharacter} />;
+        }
     }
 
     return (
@@ -43,24 +52,24 @@ function Modal({
                         </div>
                         <div className={style.navModal}>
                             <ul className={style.ul}>
-                                <li className={style.li}>Home</li>
-                                <li className={style.li}>Creators</li>
-                                <li className={style.li}>Characters</li>
-                                <li className={style.li}>Collections</li>
+                                <li className={style.li} onClick={() => handleActiveTab('home')}>
+                                    Home
+                                </li>
+                                <li className={style.li} onClick={() => handleActiveTab('creators')}>
+                                    Creators
+                                </li>
+                                <li className={style.li} onClick={() => handleActiveTab('characters')}>
+                                    Characters
+                                </li>
+                                <li className={style.li} onClick={() => handleActiveTab('collections')}>
+                                    Collections
+                                </li>
                             </ul>
                         </div>
                         <div className={style.comic_information}>
-                            <ModalCharacters titleCharacter={titleCharacter} />
-                            {/* <ModalCreators name={name} role={role} /> */}
-                            {/* <ModalHome
-                                title={title}
-                                description={description}
-                                pageCount={pageCount}
-                            /> */}
-                            <button
-                                className={style.close_modal}
-                                onClick={toggleModal}
-                            >
+                            <ActiveTab />
+
+                            <button className={style.close_modal} onClick={toggleModal}>
                                 CLOSE
                             </button>
                         </div>

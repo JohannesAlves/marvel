@@ -6,23 +6,16 @@ function ContentCharacters(props) {
         <>
             {props.characters.map(character => {
                 let description =
-                    character.description.length <= 0
-                        ? 'Character description not found!'
-                        : character.description;
+                    character.description.length <= 0 ? 'Character description not found!' : character.description;
 
                 let image =
-                    character.thumbnail.path ===
-                    'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'
+                    character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'
                         ? notFound
                         : character.thumbnail.path + '.jpg';
 
                 return (
                     <div key={character.id}>
-                        <Card
-                            heroName={character.name}
-                            heroSubtitle={description}
-                            heroImage={image}
-                        />
+                        <Card heroName={character.name} heroSubtitle={description} heroImage={image} />
                     </div>
                 );
             })}

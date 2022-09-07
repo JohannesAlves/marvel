@@ -13,8 +13,7 @@ export default function ModalCreators({ name, role }) {
         return <li key={el}>{el}</li>;
     });
 
-    const contentCreators =
-        creators.length <= 0 ? <h2>Creators not found!</h2> : creators;
+    const contentCreators = creators.length <= 0 ? <h2>Creators not found!</h2> : creators;
 
     return (
         <>
