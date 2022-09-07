@@ -1,8 +1,37 @@
+.body {
+    height: 100%;
+}
+
 .card_comics {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
     align-items: center;
-    background-color: #0767a7;
+}
+
+.paginationConfig,
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginationConfig {
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.pagination {
+    box-shadow: 25px 3px 39px 1px rgba(0, 0, 0, 0.56);
+    background-color: rgb(255, 255, 255, 0.9);
+    border-radius: 35px;
+    width: 25rem;
+    height: 3rem;
+    border: 3px solid black;
+    transition: box-shadow 0.4s;
+}
+
+.pagination:hover {
+    box-shadow: 25px 0px 39px 0px rgba(122, 122, 122, 0.56);
 }

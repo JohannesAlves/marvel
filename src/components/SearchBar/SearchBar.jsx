@@ -6,7 +6,7 @@ export default function SearchBar({ setSearch, search }) {
             className={style.searchBar}
             name="search"
             type="text"
-            placeholder="Search character..."
+            placeholder="Search..."
             onChange={e => setSearch(e.target.value)}
             value={search}
         ></input>
