@@ -49,26 +49,28 @@ export default function Avengers() {
     // This component render API to all components receive.
 
     return (
-        <body className={style.body}>
-            <div className={style.paginationConfig}>
-                <div className={style.searchBarConfig}>
-                    <SearchBar value={search} setSearch={setSearch} />
+        <>
+            <div className={style.pageComics}>
+                <div className={style.paginationConfig}>
+                    <div className={style.searchBarConfig}>
+                        <SearchBar value={search} setSearch={setSearch} />
+                    </div>
+
+                    <div className={style.pagination}>
+                        <Pagination
+                            itensPerPage={comicsPerPage}
+                            totalItens={total}
+                            paginate={paginate}
+                            currentPage={currentPage}
+                            search={search}
+                        />
+                    </div>
                 </div>
 
-                <div className={style.pagination}>
-                    <Pagination
-                        itensPerPage={comicsPerPage}
-                        totalItens={total}
-                        paginate={paginate}
-                        currentPage={currentPage}
-                        search={search}
-                    />
-                </div>
+                <article className={style.card_comics}>
+                    <ContentComicsCard cards={cards} />
+                </article>
             </div>
-
-            <div className={style.card_comics}>
-                <ContentComicsCard cards={cards} />
-            </div>
-        </body>
+        </>
     );
 }

@@ -1,13 +1,13 @@
-.body {
-    height: 100%;
-}
-
 .card_comics {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
     align-items: center;
+}
+
+.pageComics {
+    background-color: #0068a5;
 }
 
 .paginationConfig,
@@ -20,6 +20,11 @@
 .paginationConfig {
     gap: 100px;
     flex-wrap: wrap;
+}
+
+.searchBarConfig,
+.pagination {
+    margin-top: 3%;
 }
 
 .pagination {
