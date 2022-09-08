@@ -1,15 +1,12 @@
-import Character from './character/Character'
-import CharacterImage from './character-image/characterImage'
-import BtnNextPage from './btn-next-page/BtnNextPage'
+import Character from './character/Character';
+import CharacterImage from './character-image/characterImage';
+import BtnNextPage from './btn-next-page/BtnNextPage';
+import style from './style.module.css';
 
-
-export default function Home () {
-
+export default function Home() {
     return (
-        <main>
-        <Character />
-        <CharacterImage />
-        <BtnNextPage />
-        </main>
-    )
+        <>
+            <main className={style.main}></main>
+        </>
+    );
 }

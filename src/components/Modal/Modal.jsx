@@ -70,7 +70,7 @@ function Modal({ image, title, description, pageCount, name, role, titleCharacte
                             <ActiveTab />
 
                             <button className={style.close_modal} onClick={toggleModal}>
-                                CLOSE
+                                X
                             </button>
                         </div>
                     </div>

@@ -5,34 +5,10 @@
     margin-left: 5%;
     margin-top: 7vh;
     color: black;
-    background-color: white;
+    background-color: rgb(248, 248, 248);
     border-radius: 2%;
+    border: 5px solid black;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-}
-
-.marvelCharacter {
-    color: #505050;
-}
-
-.heroName {
-    font-size: 4em;
-    color: #a30000;
-    margin-top: -1%;
-}
-
-.heroDescription {
-    opacity: 63%;
-}
-
-.divAbout {
-    text-align: center;
-}
-
-.heroAbout {
-    text-align: center;
-    width: 80%;
-    height: 50px;
-    margin-top: 20%;
 }
 
 @media (max-width: 398px) {
