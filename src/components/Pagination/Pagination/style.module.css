@@ -9,3 +9,9 @@
     border-radius: 50%;
     border-top: 3px solid rgb(255, 0, 0);
 }
+
+@media (max-width: 386px) {
+    .ul {
+        gap: 10px;
+    }
+}

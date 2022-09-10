@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ContentCharacters from '../Content/contentCharacters/Card/ContentCharacters';
 import ContentTotalCharacters from '../Content/contentCharacters/TotalHeros/ContentTotalHeros';
 import Loading from '../LoadingSpinner/Loading';
@@ -17,6 +17,8 @@ export default function Characters() {
     const [total, setTotal] = useState(0);
     // search states
     const [search, setSearch] = useState('');
+    const prevSearchRef = useRef();
+
     // loading states
     const [removeLoading, setRemoveLoading] = useState(false);
 
@@ -30,6 +32,9 @@ export default function Characters() {
             (currentPage - 1) * 20
         }${search.length > 0 ? `&nameStartsWith=${search}` : ''}`;
 
+        if (search.length > 0 && prevSearchRef.current !== search) {
+            setCurrentPage(1);
+        }
         fetch(url)
             .then(response => {
                 return response.json();
@@ -37,7 +42,9 @@ export default function Characters() {
             .then(characters => {
                 const { data } = characters;
                 setCharacters(data.results);
+
                 setTotal(data.total);
+
                 setRemoveLoading(true);
             })
             .catch(err => err.json());
@@ -47,6 +54,10 @@ export default function Characters() {
     useEffect(() => {
         fetchData();
     }, [currentPage, search]);
+
+    useEffect(() => {
+        prevSearchRef.current = search;
+    }, [search]);
 
     // change page
     const paginate = pageNumber => setCurrentPage(pageNumber);

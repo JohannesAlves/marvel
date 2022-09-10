@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import style from './style.module.css';
 import ContentComicsCard from '../Content/ContentComicsCard/ContentComicsCard';
 import md5 from 'md5';
@@ -17,6 +17,7 @@ export default function Avengers() {
     const [comicsPerPage] = useState(20);
 
     const [search, setSearch] = useState('');
+    const prevSearchRef = useRef();
 
     const fetchData = () => {
         const apiKey = '4f81be65ec9847a1f604eb1c0a55d48b';
@@ -24,7 +25,12 @@ export default function Avengers() {
         let timestamp = new Date().getTime();
         let hash = md5(timestamp + privateKey + apiKey);
 
-        let url = `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=20`;
+        // se search.length for maior do que zero ele seta a página para um
+        // porém se tiver mais de uma página eu seto o current page para a página atual.
+
+        let url = `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=${comicsPerPage}&offset=${
+            (currentPage - 1) * 25
+        }${search.length > 0 ? `&titleStartsWith=${search}` : ''}`;
 
         fetch(url)
             .then(response => response.json())
@@ -32,6 +38,9 @@ export default function Avengers() {
                 const { data } = comics;
                 setCards(data.results);
                 setTotal(data.total);
+                if (search.length > 0 && prevSearchRef !== search) {
+                    setCurrentPage(1);
+                }
                 setRemoveLoading(true);
             });
     };
@@ -39,6 +48,10 @@ export default function Avengers() {
     useEffect(() => {
         fetchData();
     }, [currentPage, search]);
+
+    useEffect(() => {
+        prevSearchRef.current = search;
+    }, [search]);
 
     const paginate = pageNumber => setCurrentPage(pageNumber);
 

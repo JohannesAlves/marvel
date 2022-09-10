@@ -23,3 +23,13 @@
     border-radius: 50%;
     border-bottom: 3px solid rgb(255, 0, 0);
 }
+
+@media (max-width: 390px) {
+    .a:link {
+        font-size: 1em;
+    }
+
+    .li {
+        width: 30%;
+    }
+}
