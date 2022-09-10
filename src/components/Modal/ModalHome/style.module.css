@@ -7,13 +7,40 @@
     border-radius: 50%;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-right: none;
+    border-left: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 .description_comic_div {
     width: 400px;
     height: 400px;
     overflow-y: auto;
     margin-top: 5%;
-    border-radius: 10%;
     border: 3px solid black;
     text-align: center;
     background-color: white;
+}
+
+@media (max-width: 590px) {
+    .description_comic_div {
+        width: 100%;
+    }
 }

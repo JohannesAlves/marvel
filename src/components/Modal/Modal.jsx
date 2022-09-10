@@ -15,8 +15,10 @@ function Modal({ image, title, description, pageCount, name, role, titleCharacte
 
     if (modal) {
         document.body.classList.add('active_modal');
+        document.body.style.overflow = 'hidden';
     } else {
         document.body.classList.remove('active_modal');
+        document.body.style.overflow = 'visible';
     }
 
     const handleActiveTab = type => {
@@ -60,9 +62,6 @@ function Modal({ image, title, description, pageCount, name, role, titleCharacte
                                 </li>
                                 <li className={style.li} onClick={() => handleActiveTab('characters')}>
                                     Characters
-                                </li>
-                                <li className={style.li} onClick={() => handleActiveTab('collections')}>
-                                    Collections
                                 </li>
                             </ul>
                         </div>

@@ -91,3 +91,11 @@
     right: 10px;
     padding: 5px 7px;
 }
+
+@media (max-width: 1342px) {
+    .ul {
+    }
+    .modal_content {
+        flex-wrap: wrap;
+    }
+}
