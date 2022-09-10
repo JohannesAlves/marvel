@@ -18,32 +18,27 @@ function Nav(props) {
             <div className={style.linksNav}>
                 <ul className={style.ul}>
                     <li className={style.li}>
-                        <Link
-                            to="/"
-                            style={{ textDecoration: 'none', color: 'black' }}
-                        >
+                        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
                             Home
                         </Link>
                     </li>
                     <li className={style.li}>
-                        <Link
-                            to="/characters"
-                            style={{ textDecoration: 'none', color: 'black' }}
-                        >
+                        <Link to="/characters" style={{ textDecoration: 'none', color: 'black' }}>
                             Characters
                         </Link>
                     </li>
 
                     <li className={style.li}>
-                        <Link
-                            to="/comics"
-                            style={{ textDecoration: 'none', color: 'black' }}
-                        >
+                        <Link to="/comics" style={{ textDecoration: 'none', color: 'black' }}>
                             Comics
                         </Link>
                     </li>
 
-                    <li className={style.li}>About</li>
+                    <li className={style.li}>
+                        <Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>
+                            About
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>

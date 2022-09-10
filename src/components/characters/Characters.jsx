@@ -7,6 +7,7 @@ import Pagination from '../Pagination/Pagination/Pagination';
 import style from './style.module.css';
 import md5 from 'md5';
 import SearchBar from '../SearchBar/SearchBar';
+import Footer from '../Footer/Footer';
 
 export default function Characters() {
     // page states
@@ -91,6 +92,10 @@ export default function Characters() {
             <article className={style.cardArticle}>
                 <ContentCharacters characters={characters} />
             </article>
+
+            <footer>
+                <Footer />
+            </footer>
         </div>
     );
 }

@@ -84,6 +84,9 @@ export default function Avengers() {
                 <article className={style.card_comics}>
                     <ContentComicsCard cards={cards} />
                 </article>
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         </>
     );

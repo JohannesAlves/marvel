@@ -4,6 +4,8 @@ import Home from './components/Home/Home';
 import { Routes, Route } from 'react-router-dom';
 import Characters from './components/Characters/Characters';
 import Comics from './components/Comics/Comics';
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 function App() {
     return (
@@ -14,6 +16,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/characters" element={<Characters />} />
                 <Route path="/comics" element={<Comics />} />
+                <Route path="about" element={<About />} />
             </Routes>
         </>
     );
