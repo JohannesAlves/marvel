@@ -6,6 +6,7 @@ import md5 from 'md5';
 import Loading from '../LoadingSpinner/Loading';
 import SearchBar from '../SearchBar/SearchBar';
 import Pagination from '../Pagination/Pagination/Pagination';
+import Footer from '../Footer/Footer';
 
 export default function Avengers() {
     const [cards, setCards] = useState([]);

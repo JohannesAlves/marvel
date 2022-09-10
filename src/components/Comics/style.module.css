@@ -7,7 +7,15 @@
 }
 
 .pageComics {
+    z-index: -1;
+    min-height: 100%;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
     background-color: #0068a5;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive;
 }
 
 .paginationConfig,
@@ -39,4 +47,21 @@
 
 .pagination:hover {
     box-shadow: 25px 0px 39px 0px rgba(122, 122, 122, 0.56);
+}
+
+@media (max-width: 426px) {
+    .searchBarConfig {
+        width: 90%;
+    }
+
+    .pagination {
+        width: 90%;
+    }
+}
+
+@media (max-width: 915px) {
+    .paginationConfig {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
 }
