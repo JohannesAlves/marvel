@@ -8,9 +8,16 @@ export default function Home() {
     return (
         <>
             <main className={style.main}>
-                <Card title={'CHARACTERS'} description={'desc'} link={'/characters'} charactersImage={characterImage} />
-                <Card title={'COMICS'} description={'desc'} link={'/comics'} charactersImage={comics} />
-                <Card title={'ABOUT'} description={'desc'} link={'/about'} charactersImage={johannesImage} />
+                <article className={style.cards}>
+                    <Card
+                        title={'CHARACTERS'}
+                        description={'desc'}
+                        link={'/characters'}
+                        charactersImage={characterImage}
+                    />
+                    <Card title={'COMICS'} description={'desc'} link={'/comics'} charactersImage={comics} />
+                    <Card title={'ABOUT'} description={'desc'} link={'/about'} charactersImage={johannesImage} />
+                </article>
             </main>
         </>
     );

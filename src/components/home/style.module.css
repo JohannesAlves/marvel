@@ -1,10 +1,13 @@
 .main {
+    background-image: url('../../assets/images/teste.png');
+    background-color: rgb(97, 97, 97);
+    font-family: 'Comic Neue', cursive, Arial, Helvetica, sans-serif;
+}
+
+.cards {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    background-image: url('../../assets/images/teste.png');
-    background-color: rgb(97, 97, 97);
-    font-family: 'Comic Neue', cursive, Arial, Helvetica, sans-serif;
 }
