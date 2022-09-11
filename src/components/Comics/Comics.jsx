@@ -39,7 +39,7 @@ export default function Avengers() {
                 const { data } = comics;
                 setCards(data.results);
                 setTotal(data.total);
-                if (search.length > 0 && prevSearchRef !== search) {
+                if (search.length > 0 && prevSearchRef.current !== search) {
                     setCurrentPage(1);
                 }
                 setRemoveLoading(true);

@@ -8,7 +8,9 @@ function Nav(props) {
     return (
         <nav className={style.nav}>
             <div className={style.marvelLogo}>
-                <img src={MarvelLogo} className={style.marvelLogoImg}></img>
+                <a href="/">
+                    <img src={MarvelLogo} className={style.marvelLogoImg}></img>
+                </a>
             </div>
 
             <div className={style.menuDiv}>

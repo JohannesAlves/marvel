@@ -23,9 +23,6 @@ body {
 }
 
 @media (max-width: 600px) {
-    body {
-        background: rgb(172, 0, 0);
-    }
 }
 
 @media (prefers-color-scheme: light) {
