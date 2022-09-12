@@ -7,6 +7,48 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
     z-index: 10;
+    transition: all 1s;
+}
+
+.mobile_nav {
+    z-index: 10;
+    position: absolute;
+    transition: all 1s;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(26, 26, 26, 0.877);
+}
+
+.mobile_nav_ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.mobile_nav_li {
+    font-size: 2em;
+    list-style-type: none;
+}
+
+.mobile_nav_a,
+.mobile_closeMenu {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(236, 236, 236);
+}
+
+.menu_mobile_icon {
+    display: none;
+}
+
+.mobile_btn_close {
+    font-size: 3em;
+    color: white;
+    opacity: 0.8;
+    margin-left: 70%;
 }
 
 .marvelLogo {
@@ -18,6 +60,10 @@
     left: 10px;
 }
 
+.hiddenLogo {
+    display: none;
+}
+
 .menuDiv {
     display: none;
 }
@@ -27,6 +73,14 @@
     justify-content: center;
     align-items: center;
     margin-right: 4%;
+}
+
+.mobile_linksNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
 .li {
@@ -56,6 +110,15 @@
     transform: rotate(0deg);
 }
 
+.a {
+    text-decoration: none;
+    color: black;
+}
+
+.close {
+    display: none;
+}
+
 @media (max-width: 700px) {
     .ul {
         display: none;
@@ -67,6 +130,7 @@
     }
 
     .menuIcon {
+        cursor: pointer;
         margin-top: 1em;
         margin-right: 2%;
         width: 32px;
