@@ -1,10 +1,11 @@
 import './App.css';
-import Nav from '../components/Nav/Nav';
-import Home from '../components/Home/Home';
+import Nav from './components/Nav/Nav';
+import Home from './components/Home/Home';
 import { Routes, Route } from 'react-router-dom';
-import Characters from '../components/Characters/Characters';
-import Comics from '../components/Comics/Comics';
-import About from '../components/About/About';
+import Characters from './components/Characters/Characters';
+import Comics from './components/Comics/Comics';
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 function App() {
     return (

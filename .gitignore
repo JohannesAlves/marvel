@@ -10,7 +10,6 @@ lerna-debug.log*
 TODO.md
 
 node_modules
-dist
 dist-ssr
 *.local
 
