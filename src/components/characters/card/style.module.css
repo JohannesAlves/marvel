@@ -5,6 +5,7 @@
 }
 
 .card {
+    overflow-y: auto;
     width: 370px;
     background-color: #f1f0f0;
     border: 4px solid black;
