@@ -10,17 +10,13 @@ import SearchBar from '../SearchBar/SearchBar';
 import Footer from '../Footer/Footer';
 
 export default function Characters() {
-    // page states
     const [currentPage, setCurrentPage] = useState(1);
     const [charactersPerPage] = useState(20);
-    // Character states
     const [characters, setCharacters] = useState([]);
     const [total, setTotal] = useState(0);
-    // search states
     const [search, setSearch] = useState('');
     const prevSearchRef = useRef();
 
-    // loading states
     const [removeLoading, setRemoveLoading] = useState(false);
 
     const fetchData = () => {
@@ -51,7 +47,6 @@ export default function Characters() {
             .catch(err => err.json());
     };
 
-    // useEffect to show data in another pages. !mounting and unmounting!
     useEffect(() => {
         fetchData();
     }, [currentPage, search]);
@@ -60,7 +55,6 @@ export default function Characters() {
         prevSearchRef.current = search;
     }, [search]);
 
-    // change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
     if (!removeLoading) {

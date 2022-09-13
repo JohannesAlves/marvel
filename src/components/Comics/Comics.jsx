@@ -26,9 +26,6 @@ export default function Avengers() {
         let timestamp = new Date().getTime();
         let hash = md5(timestamp + privateKey + apiKey);
 
-        // se search.length for maior do que zero ele seta a página para um
-        // porém se tiver mais de uma página eu seto o current page para a página atual.
-
         let url = `https://gateway.marvel.com/v1/public/comics?ts=${timestamp}&apikey=${apiKey}&hash=${hash}&limit=${comicsPerPage}&offset=${
             (currentPage - 1) * 25
         }${search.length > 0 ? `&titleStartsWith=${search}` : ''}`;
@@ -59,8 +56,6 @@ export default function Avengers() {
     if (!removeLoading) {
         return <Loading />;
     }
-
-    // This component render API to all components receive.
 
     return (
         <>

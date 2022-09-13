@@ -10,8 +10,6 @@ function Pagination({ itensPerPage, totalItens, paginate, currentPage, search })
 
     const nextPages = lastPage - 3 < currentPage ? [] : [...new Array(4)].map((_, index) => currentPage + index + 1);
 
-    // se o tamanho do search for maior do que 0 ele terá que zerar o estado atual do currentPage para 1 novamente
-
     return (
         <div className={style.pagination}>
             <ul className={style.ul}>

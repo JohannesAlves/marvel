@@ -49,10 +49,6 @@
     transform: scale(1.2);
 }
 
-/**
-* card_BODY
-**/
-
 .cardBody {
     position: relative;
     height: 185px;

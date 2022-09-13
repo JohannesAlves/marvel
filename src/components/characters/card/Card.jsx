@@ -15,18 +15,11 @@ export default function Card(props) {
                             <a>{props.heroName}</a>
                         </h2>
 
-                        <div className={style.cardSubtitle}>
-                            {' '}
-                            {props.heroSubtitle}{' '}
-                        </div>
-                        <p className={style.cardDescription}>
-                            {props.heroDescription}
-                        </p>
+                        <div className={style.cardSubtitle}> {props.heroSubtitle} </div>
+                        <p className={style.cardDescription}>{props.heroDescription}</p>
                     </div>
                 </article>
             </div>
         </>
     );
 }
-//"https://images-na.ssl-images-amazon.com/images/I/61JuZe9hWuL.jpg"
-//

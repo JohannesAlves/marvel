@@ -3,7 +3,6 @@ import notFound from '../../../assets/images/notfound.jpg';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-// This component recive de data from api.
 export default function ContentComicsCard(props) {
     return (
         <>
@@ -52,10 +51,6 @@ export default function ContentComicsCard(props) {
                         key={card.id}
                     />
                 );
-
-                /*
-                1. preciso passar como name e role o name de cada objeto e o seu respectivo role
-                */
             })}
         </>
     );
